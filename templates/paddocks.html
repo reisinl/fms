@@ -3,7 +3,27 @@
 {% block title %}Paddocks{% endblock %}
 
 {% block content %}
-
-<p>Paddocks</p>
-
+<h2>Paddocks</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Paddock Name</th>
+            <th>Area (ha)</th>
+            <th>Pasture (DM/ha)</th>
+            <th>Mob in Paddock</th>
+            <th>Number of Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for paddock in paddocks %}
+        <tr {% if paddock[3] < 1500 %} class="table-danger" {% elif paddock[3] < 1800 %} class="table-warning" {% endif %}>
+            <td>{{ paddock[1] }}</td>
+            <td>{{ paddock[2] }}</td>
+            <td>{{ paddock[3] }}</td>
+            <td>{{ paddock[4] if paddock[4] else 'None' }}</td>
+            <td>{{ paddock[5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

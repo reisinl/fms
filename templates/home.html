@@ -3,9 +3,19 @@
 {% block title %}FMS - Home{% endblock %}
 
 {% block content %}
+<h1>Welcome to the Farm Management Simulator</h1>
+<p>This application helps you manage the number of stock your farm can sustain given the amount of pasture available.</p>
+<img src="{{ url_for('static', filename='farm_image.jpg') }}" alt="Farm Image" class="img-fluid">
 
-<p>Home:  Add some brief text and an image here </p>
-
-
+<!-- Navigation Links to Other Pages -->
+<nav class="mt-4">
+    <ul>
+        <li><a href="{{ url_for('mobs') }}">View Mobs</a></li>
+        <li><a href="{{ url_for('paddocks') }}">View Paddocks</a></li>
+        <li><a href="{{ url_for('move_mob') }}">Move Mob</a></li>
+        <li><a href="{{ url_for('add_paddock') }}">Add Paddock</a></li>
+        <li><a href="{{ url_for('next_day') }}">Advance Day</a></li>
+    </ul>
+</nav>
 
 {% endblock %}

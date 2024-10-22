@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Move Mob{% endblock %}
+
+{% block content %}
+<h2>Move Mob</h2>
+<form method="POST" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="mob_id" class="form-label">Select Mob</label>
+        <select class="form-select" id="mob_id" name="mob_id" required>
+            {% for mob in mobs %}
+            <option value="{{ mob[0] }}">{{ mob[1] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="paddock_id" class="form-label">Select New Paddock</label>
+        <select class="form-select" id="paddock_id" name="paddock_id" required>
+            {% for paddock in paddocks %}
+            <option value="{{ paddock[0] }}">{{ paddock[1] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Move Mob</button>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Add Paddock{% endblock %}
+
+{% block content %}
+<h2>Add Paddock</h2>
+<form method="POST" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="name" class="form-label">Paddock Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="area" class="form-label">Area (ha)</label>
+        <input type="number" class="form-control" id="area" name="area" step="0.1" required>
+    </div>
+    <div class="mb-3">
+        <label for="dm_ha" class="form-label">Pasture (DM/ha)</label>
+        <input type="number" class="form-control" id="dm_ha" name="dm_ha" step="0.1" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Paddock</button>
+</form>
+{% endblock %}

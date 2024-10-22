@@ -3,20 +3,23 @@
 {% block title %}Mobs{% endblock %}
 
 {% block content %}
-
 <h2>Mobs</h2>
-
-    <table>   
+<table class="table table-striped">
+    <thead>
         <tr>
             <th>Mob ID</th>
             <th>Mob Name</th>
+            <th>Paddock Name</th>
         </tr>
-        {% for mob in mobs %}  
-            <tr>
-                <td>{{mob[0]}}</td>  
-                <td>{{mob[1]}}</td>  
-            </tr>
-        {% endfor %}    
-    </table>
-
+    </thead>
+    <tbody>
+        {% for mob in mobs %}
+        <tr>
+            <td>{{ mob[0] }}</td>
+            <td>{{ mob[1] }}</td>
+            <td>{{ mob[2] if mob[2] else 'None' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
